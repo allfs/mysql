@@ -105,7 +105,7 @@ In summary, the compressed page looks like this:
 /** Size of an compressed page directory entry */
 #define PAGE_ZIP_DIR_SLOT_SIZE	2
 /** Mask of record offsets */
-#define PAGE_ZIP_DIR_SLOT_MASK	0x3fff
+#define PAGE_ZIP_DIR_SLOT_MASK	0xffff
 /** 'owned' flag */
 #define PAGE_ZIP_DIR_SLOT_OWNED	0x4000
 /** 'deleted' flag */
