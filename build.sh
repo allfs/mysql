@@ -1,0 +1,7 @@
+CFLAGS='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches   -m64 -mtune=generic -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -fPIC'
+CXXFLAGS='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches   -m64 -mtune=generic -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -fPIC'
+export CFLAGS CXXFLAGS
+LDFLAGS=' -pie'
+export LDFLAGS
+cmake . -DBUILD_CONFIG=mysql_release -DFEATURE_SET=community -DINSTALL_LAYOUT=RPM -DCMAKE_INSTALL_PREFIX=/usr -DINSTALL_DOCDIR=share/doc/mariadb-galera-5.5.37 -DINSTALL_DOCREADMEDIR=share/doc/mariadb-galera-5.5.37 -DINSTALL_INCLUDEDIR=include/mysql -DINSTALL_INFODIR=share/info -DINSTALL_LIBDIR=lib64/mysql -DINSTALL_MANDIR=share/man -DINSTALL_MYSQLSHAREDIR=share/mariadb-galera -DINSTALL_MYSQLTESTDIR=share/mysql-test -DINSTALL_PLUGINDIR=lib64/mysql/plugin -DINSTALL_SBINDIR=libexec -DINSTALL_SCRIPTDIR=bin -DINSTALL_SQLBENCHDIR=share -DINSTALL_SUPPORTFILESDIR=share/mariadb-galera -DMYSQL_DATADIR=/var/lib/mysql -DMYSQL_UNIX_ADDR=/var/lib/mysql/mysql.sock -DENABLED_LOCAL_INFILE=ON -DENABLE_DTRACE=ON -DWITH_EMBEDDED_SERVER=OFF -DWITH_READLINE=ON -DWITH_WSREP=ON -DWITH_SSL=system -DWITH_ZLIB=system -DWITH_JEMALLOC=no -DWITHOUT_TOKUDB=ON -DTMPDIR=/var/tmp -DWITH_MYSQLD_LDFLAGS=-Wl,-z,relro,-z,now
+make -j32
